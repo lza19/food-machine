@@ -1,7 +1,9 @@
 #include <stdio.h>
+#include <string.h>
 
 int main() {
     int stock[9] = {10,10,10,10,10,10,10,10,10};
+    char allfood[10][100];
     char again;
     do
     {
