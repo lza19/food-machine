@@ -4,6 +4,7 @@
 int main() {
     int stock[9] = {10,10,10,10,10,10,10,10,10};
     char allfood[10][100];
+    int count = 0;
     char again;
     do
     {
@@ -69,11 +70,18 @@ int main() {
             
         }
         stock[item-1]--;
+        strcpy(allfood[count], food_name[item-1]);
+        count++;
         printf("คุณได้รับสินค้า: %s\n", food_name[item-1]);
         printf("\nต้องการซื้ออีกไหม? (y/n): ");
         scanf(" %c", &again);
+
     } while (again == 'y' || again == 'Y');
 
+    printf("ของที่ซื้อทั้งหมด:\n");
+    for(int i = 0; i < count; i++) {
+        printf("- %s\n", allfood[i]);
+    }
     printf("ขอบคุณที่ใช้บริการ\n");
     return 0;
 
